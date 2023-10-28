@@ -1,0 +1,941 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --hover-color: rgb(237, 237, 237);
+    --background-color: #FFF;
+    --cityEscape-color: rgb(237, 236, 236);
+    --rentalText-color: #1D1D1D;
+    --black-color: #000;
+    --light-color: #9F9FA8;
+    --footerBack-color: #f7f7f7;
+    --buttonBack-color: #FFF;
+
+    
+}
+
+.darkTheme{
+    --hover-color: rgb(60, 60, 60);  /*done*/
+    --background-color: #1a1717;   /*done*/
+    --cityEscape-color: rgb(109, 109, 109);   /*done*/
+    --rentalText-color: #ffffff;   /*done*/
+    --black-color: #bebebe;   /*done*/
+    --light-color: #7373a4;   /*done*/
+    --footerBack-color: #222121;   /*done*/
+    --buttonBack-color: #3b3737;     /*done*/
+}
+
+body{
+  background-color: var(--background-color);  
+}
+
+#toggle{
+    /* width: 30px; */
+}
+
+.header{
+    margin: 0 170px;
+    display: flex;
+    height: 100px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    border-right: 1px solid #c2c0c0;
+}
+
+.logo img{
+    height: 45px;
+    width: 80px;
+    cursor: pointer;
+    margin-right: 100px;
+}
+
+.nav-options{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 50px;
+}
+
+.nav-option{
+    cursor: pointer;
+    padding: 14px 10px;
+    border-radius: 10px;
+}
+
+.nav-option:hover{
+    background-color: var(--hover-color);
+}
+
+.nav-option img{
+    height: 20px;
+    width: 80px;
+    margin: 0px 0px 8px;
+}
+
+.nav-option h3{
+    font-size: 14px;
+    color: var(--black-color);
+}
+
+.nav-support{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    cursor: pointer;
+}
+
+.nav-help{
+    display: flex;
+    align-items: center;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 8px;
+    border-radius: 10px;
+}
+
+.nav-help h3{
+    color: var(--black-color);
+}
+
+.nav-help:hover{
+    background-color: var(--hover-color);
+}
+
+.nav-help img{
+    height: 20px;
+    width: 20px;
+}
+
+/* --------------header Ends----------------- */
+
+/* ----------------body starts ---------------- */
+
+.city-escape{
+    background: url(/images/city_scape_.png);
+    background-color: var(--cityEscape-color);
+    height: 520px;
+    width: 100%;
+}
+
+/* couponhere */
+
+.popup{
+    height: 70%;
+    width: 80%;
+    /* background-color: red; */
+    position: fixed;
+    background-image: url('./images//redbus-offers.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 8%;
+    margin-left: 15%;
+    z-index: 100;
+    visibility: hidden;
+}
+
+.popup button{
+    width: 30px;
+    font-size: 30px;
+    border: none;
+    background-color: transparent;
+
+}
+
+/* coupon Ends here  */
+
+.city-escape-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.city-escape-content h2{
+    font-size: 32px;
+    margin: 22px 0px;
+    margin: 60px 0;
+}
+
+.city-escape-content .form{
+    height: 112px;
+    width: 990px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFF;
+    border-radius: 35px;
+}
+
+.form label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 10px;
+    gap: 30px;
+    margin: 0 10px;
+    border-right: 1px solid #c2c0c0;
+}
+
+.form label:nth-child(3){
+    border-right: none;
+}
+
+.form label img{
+    height: 35px;
+    width: 35px;
+}
+
+.form input{
+    outline: none;
+    border: none;
+    height: 114px;
+}
+
+.form input::placeholder{
+    font-size: 18px;
+}
+
+.form button{
+    border-bottom-right-radius: 35px;
+    border-top-right-radius: 35px;
+    height: 114px;
+    width: 350px;
+    outline: none;
+    border: none;
+    background: #D84E55;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #FFF;
+    padding: 40px;
+}
+
+/* --------------city escape ends here ------------ */
+
+/* --------------trending offers starts ------------------- */
+
+.trending-container{
+    height: 300px;
+    width: 1200px;
+    margin: 110px 170px;
+    padding: 32px;
+    border-radius: 20px;
+    background-color: #f8f8f8;
+}
+
+.trending-container span{
+    font-size: 32px;
+    color: #4a4a4a;
+}
+
+.offers{
+    margin-top: 30px;
+    display: flex;
+    gap: 12px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    flex: 1;
+}
+
+.offer{
+    height: 168px;
+    width: 300px !important;
+    padding: 16px;
+    border-radius: 20px;
+    display: flex;
+    /* flex: 1; */
+    align-items: center;
+    gap: 8px;
+    /* margin-right: 15px; */
+    cursor: pointer;
+}
+
+.first{
+    background-color: purple;
+    width: 300px;
+    height: 168px;
+}
+
+.second{
+    background-color: green;
+    width: 300px;
+    height: 168px;
+}
+
+.third{
+    background-color: red;
+    width: 300px;
+    height: 168px;
+}
+
+.fourth{
+    background-color: gray;
+    width: 300px;
+    height: 168px;
+}
+
+.fifth{
+    background-color: #FBAB7E;
+    width: 300px;
+    height: 168px;
+
+}
+
+.sixth{
+    background-color: navajowhite;
+    width: 300px;
+    height: 168px;
+}
+
+.offer .logo-img{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+
+.offer-text .offer-header{
+    background-color: rgba(255, 255, 255, 0.2);
+    font-size: 12px;
+    width: 42px;
+    padding: 4px 8px;
+    border-radius: 40px;
+}
+
+.offer-text h3{
+    font-size: 16px;
+}
+.offer-text p{
+    font-size: 10px;
+}
+
+.offer-text{
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    /* margin-left: 15px; */
+    /* width: 45%; */
+}
+
+.coupon-code div{
+    font-size: 12px;
+    padding: 4px 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    border: 1px dotted #c2c0c0;
+} 
+
+.coupon-code{
+    display: flex;
+    gap: 30px;
+}
+
+.coupon-code img{
+    width: 24px;
+    height: 24px;
+    color: #FFF;
+    cursor: pointer;
+}
+
+
+/* ---------------------------ads-------------------------- */
+
+.advertise{
+    margin: 32px 0px;
+}
+
+.advertise img{
+    height: 90px;
+    width: 970px;
+    margin: 220px 280px 50px;
+    border-radius: 10px;
+}
+
+
+/* --------------------------RYDE CAB----------------------- */
+
+main{
+    margin: 0px 190px 32px;
+}
+
+.rental-container{
+   display: flex;
+   width: 1200px;
+   /* margin: 0 200px; */
+   align-items: center;
+}
+
+.rental-text-content{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 15px;
+}
+
+.rental-text-content h2{
+    font-size: 40px;
+    color: var(--rentalText-color);
+    font-weight: 300;
+}
+.rental-text-content h2 span{
+    font-weight: bolder;
+}
+
+.rental-switch{
+    display: flex;
+    gap: 30px;
+}
+
+.Cab-rental{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 14px 16px;
+    gap: 10px;
+    border-bottom: 2px solid #c2c0c0;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.Cab-rental h5{
+    color: var(--black-color);
+}
+
+.Cab-rental:hover{
+    background-color: var(--hover-color);
+    color: #D84E55;
+    border-bottom: 2px solid #D84E55;
+}
+
+.rental-text-content p{
+    font-size: 16px;
+    margin: 0 0 24px;
+    color: var(--black-color);
+}
+
+.rental-types{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.rentals{
+    display: flex;
+    gap: 20px;
+}
+
+.rentals .rental-txt{
+    color: var(--black-color);
+}
+
+.rentals img{
+    width: 80px;
+    height: 40px;
+}
+
+.rental-types button{
+    margin: 10px 0 0;
+    padding: 15px 16px;
+    border: none;
+    outline: none;
+    background-color: #D84E55;
+    border-radius: 15px;
+    color: #FFF;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.rental-types button:hover{
+    background-color: #be4248;
+}
+
+/* This needs to be changed */
+.rental-image{
+    background: url(images/rydePop.svg);
+    background-size: 100;
+    background-repeat: no-repeat;
+    margin-top: 100px;
+}
+/* untill here */
+
+
+/* ------------------enjoy-container starts here--------------- */
+
+.enjoy-container{
+    background: url(images/enjoy-background.svg);
+    height: 400px;
+    border-radius: 40px;
+    margin: 40px 0;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.enjoy-heading{
+    font-size: 40px;
+    color: #FFF;
+}
+
+.enjoy-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quick-access{
+    width: 376px;
+    height: 260px;
+    background: #FFF;
+    padding: 48px 32px;
+    border-radius: 25px;
+    color: #4a4a4a;
+}
+
+.quick-heading{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0 0 36px;
+}
+
+.quick-heading-txt{
+    display: flex;
+    gap: 10px;
+}
+
+.quick-heading-txt p{
+    font-size: 18px;
+}
+
+.quick-content-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quick-content{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.quick-content h3{
+    font-size: 20px;
+}
+
+.quick-content p{
+    font-size: 14px;
+}
+
+.quick-content h5{
+    font-size: 14px;
+}
+
+.quick-content-first{
+    border-right: 2px solid #c1c1c1;
+    padding-right: 30px;
+}
+
+.qr-container{
+    display: flex;
+    justify-content: start;
+    /* align-items: start; */
+    gap: 45px;
+    align-items: center;
+    
+}
+
+.qr-container h4{
+    font-size: 14px;
+    color: #FFF;
+}
+
+.qr{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.download{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* justify-content: start; */
+    align-items: start;
+
+}
+
+/* -------------------------primo-content------------------------- */
+
+.primo-img{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    margin: 150px 0;
+}
+
+.primo-subContainer{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.primo-card{
+    background-image: linear-gradient( 134.6deg,  rgba(201,37,107,1) 15.4%, rgba(116,16,124,1) 74.7% );
+    border-radius: 25px;
+    padding: 24px;
+    width: 352px;
+    height: 157px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.primo-content{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.primo-content h4{
+    font-size: 22px;
+    color: #fff;
+}
+
+.primo-content p{
+    font-size: 13px;
+    color: #fff;
+}
+
+/* ---------------------partnered buses-------------------------- */
+
+
+.partnered-heading{
+    font-size: 40px;
+    margin: 0px 0px 48px;
+    font-weight: 500;
+    color: var(--black-color);
+
+}
+
+.partnered-rtc{
+    display: flex;
+    justify-content: space-between;
+}
+
+.partnered-rtc span{
+    font-size: 28px;
+    /* margin: 0px 0px 32px; */
+    color: var(--black-color);
+    font-weight: 300;
+}
+
+.partnered-rtc button{
+    font-size: 16px;
+    padding: 10px 20px;
+    color: var(--black-color);
+    cursor: pointer;
+    border: 1px solid var(--black-color);
+    /* background: transparent; */
+    background-color: var(--buttonBack-color);
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.partnered-rtc button:hover{
+    background-color: var(--hover-color);
+}
+
+.bus-type{
+    cursor: pointer;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.partnered-buses{
+    display: flex;
+    gap: 25px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.bus-type:hover{
+    background-color: var(--hover-color);
+}
+
+.bus-logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.bus-logo img{
+    height: 96px;
+    width: 96px;
+    margin: 0px 0px;
+}
+
+.bus-logo div{
+    font-size: 16px;
+    /* padding: 10px 32px; */
+    color: var(--black-color);
+    /* margin-left: 180px; */
+}
+
+
+/* ----------------------operators name---------------------- */
+
+
+.operators-heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.operators-heading span{
+    font-size: 28px;
+    margin: 20px 0px 32px;
+    color: var(--black-color);
+    font-weight: 400;
+}
+
+.operators-heading button{
+    font-size: 16px;
+    padding: 10px 20px;
+    color: var(--black-color);
+    cursor: pointer;
+    border: 1px solid var(--black-color);
+    /* background: transparent; */
+    background-color: var(--buttonBack-color);
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.operators-heading button:hover{
+    background-color: var(--hover-color);
+}
+
+.operators-name{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: start;
+    gap: 40px;
+    margin-top: 4%;
+}
+
+.operators-name span{
+    cursor: pointer;
+    padding: 16px 8px;
+    font-size: 15px;
+    color: var(--black-color);
+    border-radius: 30px;
+    font-weight: lighter;
+}
+
+.operators-name span:hover{
+    background-color: var(--hover-color);
+}
+
+
+/* --------------countries------------- */
+
+.global-presence{
+    margin: 4% 0;
+}
+
+.global-presence span{
+    font-size: 28px;
+    margin: 20px 0px 32px;
+    color: var(--black-color);
+    font-weight: 400;
+}
+
+.global-countries{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.global-countries img{
+    height: 120px;
+    width: 120px;
+    margin: 0px 0px;
+}
+
+.global-countries div{
+    font-size: 20px;
+    /* padding: 10px 32px; */
+    color: var(--black-color);
+    font-weight: bolder;
+    /* margin-left: 180px; */
+}
+
+.country{
+    cursor: pointer;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.country:hover{
+    background-color: var(--hover-color);
+}
+
+.countries{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 40px;
+}
+
+
+/* --------------footer--------------- */
+
+footer{
+    width: 100vw;
+    height: 666px;
+    padding: 48px ;
+    background-color: var(--footerBack-color);
+}
+
+.top-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-right: 30px;
+}
+
+.top-footer-column{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.top-footer-column-header{
+    font-size: 18px;
+    color: var(--black-color);
+    font-weight: bold;
+}
+
+.top-footer-column-content{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--light-color);
+    font-weight: 200;
+}
+
+.top-footer-column-content div{
+    cursor: pointer;
+    color: var();
+}
+
+.horizontal-separator{
+    height: 1px;
+    width: 85%;
+    background-color: var(--light-color);
+    margin: 2% 5% 2% 6%;
+}
+
+.middle-footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0px 10%;
+}
+
+.middle-footer-left{
+    height: 270px;
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-right: 20%;
+}
+
+.middle-footer-left img{
+    height: 65px;
+    height: 100px;
+    /* margin-left: 10px; */
+}
+
+.middle-footer-left div{
+    width: 270px;
+    height: 140px;
+    color: var(--black-color);
+}
+
+.middle-footer-column{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.middle-footer-column-header{
+    font-size: 18px;
+    font-weight: bolder;
+    color: var(--black-color);
+}
+
+.middle-footer-column-content{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    color: var(--light-color);
+    cursor: pointer;
+}
+
+.middle-footer-right{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-right: 10%;
+}
+
+.bottom-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 10%;
+}
+
+.bottom-footer-left{
+    font-size: 14px;
+    color: var(--light-color);
+}
+
+.bottom-footer-right{
+    display: flex;
+    gap: 15px;
+    margin-right: 10%;
+}
+
+.bottom-footer-right img{
+    width: 30px;
+    cursor: pointer;
+}
